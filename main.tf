@@ -2,7 +2,7 @@
 #create inventory file
 
 resource "local_file" "ansible_inventory" {
-  content = templatefile("/root/templates/locals.tpl",
+  content = templatefile("/templates/locals.tpl",
   {
     keyfile = var.ppkfile,
     demoservers = aws_instance.ansible_nodes.*.public_ip
